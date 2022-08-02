@@ -1,4 +1,3 @@
-
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { Animated, Dimensions, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -27,7 +26,7 @@ const App = (props) => {
     <>
       <StatusBar backgroundColor={colors.primary} />
       <Tab.Navigator
-        initialRouteName='Dashboard'
+        // initialRouteName='Dashboard'
         tabBarOptions={{
           showLabel: false,
           // Floating Tab Bar...
@@ -98,12 +97,8 @@ const App = (props) => {
         })}></Tab.Screen>
 
 
-        {
 
-          // Extra Tab Screen For Action Button..
-        }
-
-        <Tab.Screen name={"Dashboard"} component={Mainscreen}
+        {/* <Tab.Screen name={"Dashboard"} component={Mainscreen}
           listeners={({ navigation, route }) => ({
             // Onpress Update....
             tabPress: e => {
@@ -152,7 +147,7 @@ const App = (props) => {
               // </TouchableOpacity>
             )
           }}
-        ></Tab.Screen>
+        ></Tab.Screen> */}
 
         <Tab.Screen name={"Attandance"} component={AttendanceScreen} options={{
           headerStyle: {
@@ -202,22 +197,6 @@ const App = (props) => {
 
       </Tab.Navigator>
 
-      {/* <Animated.View style={{
-        width: state ? 0 : getWidth() - 20,
-        height: 2,
-        backgroundColor: line ? "transparent" : colors.primary,
-        position: 'absolute',
-        bottom: Platform.OS === "ios" ? 104 : 60,
-        // Horizontal Padding = 20...
-        left: leftPercentage,
-        borderRadius: 20,
-        transform: [
-          { translateX: tabOffsetValue }
-        ]
-      }}>
-
-      </Animated.View> */}
-      {/* <View style={{ height: Platform.OS === "ios" ? 25 : 10 }} /> */}
     </>
   );
 }

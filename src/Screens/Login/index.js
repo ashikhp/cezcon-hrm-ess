@@ -52,6 +52,15 @@ const LoginScreen = (props) => {
       />
     )
   }
+  useEffect(() => {
+    AsyncStorage.getItem('loginData', (err, result) => {
+      const login = JSON.parse(result);
+      if (login === "true") {
+        props.navigation.navigate('Home')
+      }
+    })
+  }, [])
+  
 
   const login = () => {
     if (email === '' || password === '') {

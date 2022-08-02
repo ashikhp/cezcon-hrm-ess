@@ -35,19 +35,7 @@ export function DrawerContent(props) {
           </View>
 
           <Drawer.Section style={styles.drawerSection}>
-            <DrawerItem
-              icon={({ color, size }) => (
-                <FontAwesome5
-                  name="home"
-                  size={20}
-
-                ></FontAwesome5>
-              )}
-              label="Dashboard"
-              onPress={() => {
-                props.navigation.navigate('Dashboard');
-              }}
-            />
+       
             <DrawerItem
               icon={({ color, size }) => (
                 <FontAwesome5

@@ -1,14 +1,21 @@
+
 import axios from 'axios';
+import { Alert } from 'react-native';
+import { callAPI } from './apiCallFunction'
+
+const API = {
+  LOGIN: "Login/auth",
+  EMPLOYEES: "Employees/employee_get",
+}
+
 export async function Login(params) {
-    const response = await axios.post(`https://www.mai-saloon.com/app/opm/api/Login/auth`,  params )
-    return response.data;
-  }
-  export async function getContacts(params) {
-    const response = await axios.post(`https://www.mai-saloon.com/app/opm/api/Master/site_contact`,  params )
-    return response.data;
-  }
-  export async function getAboutMaisaloon() {
-    const response = await axios.post(`https://www.mai-saloon.com/app/opm/api/Master/about_maisaloon` )
-    return response.data;
-  }
-  
+  return callAPI(API.LOGIN, params);
+}
+
+export async function getEmployees(params) {
+  return callAPI(API.EMPLOYEES, params);
+}
+
+
+
+
